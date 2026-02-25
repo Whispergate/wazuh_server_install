@@ -24,12 +24,14 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    # Wazuh installation script URL
-    wazuh_install_script_url: "https://packages.wazuh.com/4.7/wazuh-install.sh"
-    # SOCFORTRESS Wazuh rules script URL
-    socfortress_rules_script_url: "https://raw.githubusercontent.com/aaladha/Wazuh-Rules/main/wazuh_socfortress_rules.sh"
-    # (Optional) Force admin password
-    wazuh_admin_password: Wazuh-123
+```yaml
+# Wazuh installation script URL
+wazuh_server_version: "4.14.3"
+wazuh_install_script_url: "https://packages.wazuh.com/{{ wazuh_server_version }}/wazuh-install.sh"
+
+# SOCFORTRESS Wazuh rules script URL
+socfortress_rules_script_url: "https://raw.githubusercontent.com/aaladha/Wazuh-Rules/main/wazuh_socfortress_rules.sh"
+```
 
 
 ## Example Playbook
@@ -58,7 +60,7 @@ ludus:
     roles:
       - aleemladha.wazuh_server_install
     role_vars:
-      wazuh_admin_password: Wazuh-123
+      wazuh_server_version: "4.14.0"
 ```
 
 ## Ludus setup
@@ -159,9 +161,6 @@ ludus:
       block_internet: false
     roles:
       - aleemladha.wazuh_server_install
-    role_vars:
-      wazuh_admin_password: Wazuh-123
-
 ```
 
 ## License
