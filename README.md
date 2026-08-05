@@ -56,7 +56,7 @@ ludus:
     linux: true
     testing:
       snapshot: false
-      block_internet: false
+      testing.block_internet: false
     roles:
       - aleemladha.wazuh_server_install
     role_vars:
@@ -158,7 +158,7 @@ ludus:
     linux: true
     testing:
       snapshot: false
-      block_internet: false
+      testing.block_internet: false
     roles:
       - aleemladha.wazuh_server_install
 ```
